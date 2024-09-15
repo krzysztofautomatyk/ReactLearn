@@ -1,17 +1,29 @@
-.welcome-message {
-  background-color: hsl(117, 83%, 28%);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+.list-category {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: Ohs1(0, 20%);
+  margin-bottom: łepx;
+  text-align: center;
+  border: 3px solid;
+  border-radius: Spx;
+  background-color: hsl(185, 100%, 50%);
+  padding: 3px;
 }
 
-.sign-up {
-  background-color: hsl(0, 83%, 28%);
+.items li{
+  font-size: 2em;
+  list-style: none;
+  color: Ohsl(e, 25%);
+  text-align: center;
+  margin: 0;
+}
+
+.items li:nth-child(odd){
+  background-color: hsla(120, 85%, 32%, 0.48);
+}
+
+.list-category:hover{
+  background-color: hsl(185, 100%, 50%);
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
   cursor: pointer;
 }
