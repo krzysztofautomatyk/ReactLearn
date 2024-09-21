@@ -1,29 +1,29 @@
-.list-category {
-  font-size: 2.5em;
+.counter-container {
+  
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.counter-display{
+  font-size: 10em;
+  margin-top: 0;
+  margin-bottom: 50px;
+  /* center */
+  text-align: center;
   font-weight: bold;
-  color: Ohs1(0, 20%);
-  margin-bottom: łepx;
-  text-align: center;
-  border: 3px solid;
-  border-radius: Spx;
-  background-color: hsl(185, 100%, 50%);
-  padding: 3px;
 }
 
-.items li{
+.counter-button{
   font-size: 2em;
-  list-style: none;
-  color: Ohsl(e, 25%);
-  text-align: center;
-  margin: 0;
-}
-
-.items li:nth-child(odd){
-  background-color: hsla(120, 85%, 32%, 0.48);
-}
-
-.list-category:hover{
-  background-color: hsl(185, 100%, 50%);
-  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+.counter-button:hover{
+  background-color: hsl(104, 87%, 66%);
 }
