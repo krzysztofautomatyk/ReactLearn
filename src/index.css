@@ -1,29 +1,53 @@
-.counter-container {
-  
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  
+body{
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
 }
 
-.counter-display{
-  font-size: 10em;
-  margin-top: 0;
-  margin-bottom: 50px;
-  /* center */
+.color-picker-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.color-display{
+    width: 200px;
+    height: 200px;
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid hsl(0, 0%, 80%);
+    border-radius: 25px;
+    margin-bottom: 25px;
+    transition: 0.25s ease;
+}
+
+.color-display p{
+  color: hsl(0, 0%, 20%);
+  font-size: 2rem;
   text-align: center;
+}
+
+label{
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.counter-button{
-  font-size: 2em;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.counter-button:hover{
-  background-color: hsl(104, 87%, 66%);
+input[type="color"]{
+  width: 75px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid hsl(0, 0%, 80%);
 }
