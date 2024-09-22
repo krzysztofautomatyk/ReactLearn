@@ -3,32 +3,62 @@ import React,  {useState} from 'react';
 
 function MyComponent() {
   
-    const [name, setName] = useState("Guest");
-    const [age, setAge] = useState(25);
-    const [isEmployed, setIsEmployed] = useState(false);   
-    
-    const updateName = () => {
-        setName('John Doe');
+    const [name, setName] = useState("Geust");
+    const [quantity, setQuantity] = useState(1);
+    const [comments, setComments] = useState("Write your comments here");
+    const [payment, setPayment] = useState("");
+    const [shipping, setShipping] = useState("");   
+
+    function handleNameChange(event) {
+        setName(event.target.value);
     }
 
-    const incrementAge = () => {
-        setAge(age + 1);
+    function handleQuantityChange(event) {
+        setQuantity(event.target.value);
     }
 
-    const toggleEmployment = () => {
-           setIsEmployed(!isEmployed);
+    function handleCommentsChange(event) {
+        setComments(event.target.value);
     }
 
-    return(<div>
-        <p>Name: {name}</p>
-        <button onClick={updateName}>Set Name</button>
+    function handlePaymentChange(event) {
+        setPayment(event.target.value);
+    }
 
-        <p>Age: {age}</p>
-        <button onClick={incrementAge}>Increment Age</button>
+    function handleShippingChange(event) {
+        setShipping(event.target.value);
+    }
 
-        <p>Is isEmployed: {isEmployed ? "Yes" : "No"}</p>
-        <button onClick={toggleEmployment}>Toggle Employment</button>
-    </div>)
+    return (
+        <div >
+            <input value={name} onChange={handleNameChange} />
+            <p>Hello, {name}</p>
+
+            <input value={quantity} onChange={handleQuantityChange} type='number' />
+            <p>Quantity: {quantity}</p>
+
+            <textarea value={comments} onChange={handleCommentsChange} 
+            placeholder="Write your comments here" />
+            <p>Comments: {comments}</p>
+
+            <select value={payment} onChange={handlePaymentChange}>
+                <option value="">Select Payment Method</option>
+                <option value="credit">Credit Card</option>
+                <option value="debit">Debit Card</option>
+                <option value="netbanking">Net Banking</option>
+            </select>
+            <p>Payment: {payment}</p>
+
+            <input type="radio" value="standard" checked={shipping === "standard"}
+            onChange={handleShippingChange} />
+            <label>Standard Shipping</label>
+            <input type="radio" value="express" checked={shipping === "express"}
+            onChange={handleShippingChange} />
+            <label>Express Shipping</label>
+            <p>Shipping: {shipping}</p>
+            
+        </div>
+    );
 }
 
 export default MyComponent;
