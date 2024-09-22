@@ -2,39 +2,30 @@ import React, {useState} from "react";
 
 function MyComponent(){
 
-    const [count, setCount] = useState(0);
-/*
-    function handleIncrement(){
-        setCount(count + 1);
-        setCount(count + 1);
-        setCount (count + 1);
-        //Update rexult is 1 not 3
-    }
-*/
-    function handleIncrement(){
-        setCount(count => count + 1);
-        setCount(count => count + 1);
-        setCount(count => count + 1);
-        //Update result is 3
+    const [car, setCar] = useState({year: 2019, make: "Toyota", model: "Corolla"});
+
+    function handleYearChange(event){
+        setCar(car => ({...car, year: event.target.value}));
     }
 
-    function handleDecrement(){
-        setCount(count - 1);
+    function handleMakeChange(event){
+        setCar(car => ({...car, make: event.target.value}));
     }
 
-    function handleReset(){
-        //setCount(0);
-        setCount(count => 0);
+    function handleModelChange(event)
+    {   
+        setCar(car => ({...car, model: event.target.value})); 
     }
+
 
     return (
-        <div className="counter-container">
-            <h1>Counter</h1>
-            <p>Count: {count}</p>
-            <button onClick={handleIncrement}>Increment</button>
-            <button onClick={handleDecrement}>Decrement</button>
-            <button onClick={handleReset}>Reset</button>
+        <div>
+            <p>Your favorite car is: {car.year} {car.make} {car.model}</p>
+                <input type="number" value={car.year} onChange={handleYearChange} />
+                <input type="text" value={car.make} onChange={handleMakeChange} />
+                <input type="text" value={car.model} onChange={handleModelChange} />
         </div>
+       
     );
 }
 
